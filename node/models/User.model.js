@@ -22,7 +22,8 @@ User.add({
     },
     activities: {
         type: Types.Relationship,
-        ref: 'Activity'
+        ref: 'Activity',
+        many: true
     }
 }, 'Permissions', {
     isAdmin: {
