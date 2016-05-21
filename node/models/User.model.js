@@ -6,19 +6,23 @@ var keystone = require('keystone'),
 
 User.add({
     name: {
-        type: Types.Name,
+        type: String,
         required: true,
         index: true,
         initial: true
     },
-    email: {
-        type: Types.Email,
-        initial: true,
-        index: true
-    },
     password: {
         type: Types.Password,
         initial: true
+    },
+    facebookId: {
+        type: String
+    },
+    facebookAccessToken: {
+        type: String
+    },
+    updatedAt: {
+        type: Date
     }
 }, 'Permissions', {
     isAdmin: {
@@ -27,8 +31,16 @@ User.add({
         index: true
     }
 });
+
+User.schema.add({
+    personality: {
+        type: keystone.mongoose.Schema.Types.Mixed
+    }
+});
+
 User.schema.virtual('canAccessKeystone').get(function() {
     return this.isAdmin;
 });
-User.defaultColumns = 'name, email, isAdmin';
+
+User.defaultColumns = 'name, email, facebookId, isAdmin';
 User.register();
