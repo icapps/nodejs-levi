@@ -28,8 +28,7 @@ keystone.pre('routes', function(req, res, next) {
     }
 });
 
-exports = module.exports = function(app) {
-
+exports = module.exports = function (app) {
     var angularAppDirectory = process.env.NODE_ENV === 'production' ? path.join(__dirname, '/../../build/app') : path.join(__dirname, '/../../app');
 
     // Set static directory
@@ -48,6 +47,11 @@ exports = module.exports = function(app) {
         res.send(cheerioSelector.html());
     });
 
+    app.get('/users', routes.api.user.getUsers);
+    app.post('/match', routes.api.match.findMatch);
+    app.post('/message', routes.api.message.addMessage);
+    app.post('/messages/analyze', routes.api.message.analyzeTone);
+    app.get('/api/users', routes.api.user.getUsers);
     app.post('/api/verify', routes.api.user.verify);
-
+    app.post('/api/activities', routes.api.activity.postActivities);
 };
