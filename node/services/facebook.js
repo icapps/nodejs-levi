@@ -6,7 +6,7 @@ module.exports = function() {
 
     function getPosts(user, cb) {
 
-        console.log('getting posts of user', user._id, 'with accessToken', user.facebookAccessToken);
+        console.log('getting posts of user', user, 'with accessToken', user.facebookAccessToken);
         fb.setAccessToken(user.facebookAccessToken);
         fb.api('me', {fields: ['posts.limit(250){message}']}, function(response) {
 
@@ -34,7 +34,6 @@ module.exports = function() {
                     var newStrings = strings;
                     strings = strings.concat(newStrings);
                 }
-                console.log(_.size(strings));
 
                 if (_.isFunction(cb)) {
                     cb(null, {

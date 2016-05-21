@@ -8,7 +8,7 @@ var watson = require('watson-developer-cloud'),
 module.exports = function() {
 
     function input(text, cb) {
-        console.log('getting the personality insights for', text);
+        console.log('getting the personality insights');
         personalityInsights.profile({
                 text: text
             },

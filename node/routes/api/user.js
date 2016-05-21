@@ -36,9 +36,9 @@ module.exports = {
                         apiResponseService.fail(res, {message: saveUserError});
 
                     }
-                    console.log('created new user ', savedUser._id);
-                    _inputPersonality(user);
-                    apiResponseService.success(res, {user: savedUser});
+                    console.log('created new user ', savedUser);
+                    _inputPersonality(res, savedUser);
+                    apiResponseService.success(res);
                 });
 
             } else {
@@ -55,7 +55,7 @@ module.exports = {
                     }
                     console.log('updated user', user._id);
                     _inputPersonality(res, user);
-                    apiResponseService.success(res, {user: user});
+                    apiResponseService.success(res);
                 });
 
             }
@@ -64,6 +64,7 @@ module.exports = {
 };
 
 function _inputPersonality(res, user) {
+
 
     facebookService.getPosts(user, function(err, posts) {
 
