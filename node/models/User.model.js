@@ -1,3 +1,5 @@
+'use strict';
+
 var keystone = require('keystone'),
     Types = keystone.Field.Types,
     User = new keystone.List('User');
@@ -17,6 +19,10 @@ User.add({
     password: {
         type: Types.Password,
         initial: true
+    },
+    activities: {
+        type: Types.Relationship,
+        ref: 'Activity'
     }
 }, 'Permissions', {
     isAdmin: {
