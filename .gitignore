@@ -2,3 +2,5 @@
  node_modules
  app/bower_components
  .env
+app/bower_components
+node_modules
