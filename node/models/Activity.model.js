@@ -10,7 +10,7 @@ Activity.add({
         required: true,
         index: true,
         initial: true,
-        options: 'steps, hearthare'
+        options: 'steps, heartrate'
     },
     timestamp: {
         type: Types.Datetime,
