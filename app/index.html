@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>LEVI</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+
+    <!-- build:css css/levi.css -->
+    <link href="https://bootswatch.com/cosmo/bootstrap.min.css" rel="stylesheet"/>
+    <!-- endbuild -->
+
+    <!-- build:js js/vendor.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js js/levi.min.js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-bcrypt/dist/dtrw.bcrypt-df34c8d1.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+    <script src="bower_components/angular-flash-alert/dist/angular-flash.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/angular-payments/lib/angular-payments.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- Angular -->
+    <script src="js/app.module.js"></script>
+    <script src="js/page/page.module.js"></script>
+    <script src="js/api/api.module.js"></script>
+    <script src="js/api/api.provider.js"></script>
+    <script src="js/api/service/crudService.factory.js"></script>
+    <script src="js/config/config.module.js"></script>
+    <script src="js/user/user.module.js"></script>
+    <script src="js/global/global.module.js"></script>
+    <script src="js/global/directive/statusBar.directive.js"></script>
+    <script src="js/global/service/errorInterceptor.factory.js"></script>
+    <script src="js/global/service/eventSubscriber.factory.js"></script>
+    <script src="js/global/service/statusMessages.factory.js"></script>
+    <script src="js/global/filter/unsafe.filter.js"></script>
+    <script src="js/page/controller/page.controller.js"></script>
+    <script src="js/page/controller/home.controller.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body ng-app="app" ng-controller="PageCtrl as page">
+<status-bar></status-bar>
+
+<footer>
+</footer>
+</body>
+</html>
+

@@ -1,0 +1,8 @@
+<div class="status-bar" ng-show="sb.messages.length > 0">
+    <div class="status-bar__message" ng-class="message.class" ng-repeat="message in sb.messages track by message.id">
+        <div class="buffering-spinner-wrapper" ng-if="message.loading">
+            <div class="spinner spinner--dark"></div>
+        </div>
+        <span ng-show="message.loading"></span> {{ message.text }}
+    </div>
+</div>
