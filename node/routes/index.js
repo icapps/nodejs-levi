@@ -6,7 +6,8 @@ var keystone = require('keystone'),
     pkg = require('../../package.json'),
     cheerio = require('cheerio'),
     fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+    io = require('socketio');
 
 // Import Route Controllers
 var routes = {
@@ -29,7 +30,6 @@ keystone.pre('routes', function (req, res, next) {
 });
 
 exports = module.exports = function (app) {
-
     var angularAppDirectory = process.env.NODE_ENV === 'production' ? path.join(__dirname, '/../../build/app') : path.join(__dirname, '/../../app');
 
     // Set static directory
@@ -46,5 +46,7 @@ exports = module.exports = function (app) {
 
         cheerioSelector('head').append(spObject);
         res.send(cheerioSelector.html());
+        var io = app.io;
+        io.listen(server);
     });
 };
