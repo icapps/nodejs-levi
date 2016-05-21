@@ -14,7 +14,7 @@ var routes = {
 };
 
 // Cors
-keystone.pre('routes', function (req, res, next) {
+keystone.pre('routes', function(req, res, next) {
     var origin = '*'; // TODO
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
@@ -28,7 +28,7 @@ keystone.pre('routes', function (req, res, next) {
     }
 });
 
-exports = module.exports = function (app) {
+exports = module.exports = function(app) {
 
     var angularAppDirectory = process.env.NODE_ENV === 'production' ? path.join(__dirname, '/../../build/app') : path.join(__dirname, '/../../app');
 
@@ -36,7 +36,7 @@ exports = module.exports = function (app) {
     app.use(express.static(angularAppDirectory, {index: false}));
 
     // Set the Angular app
-    app.get('/', function (req, res) {
+    app.get('/', function(req, res) {
         var html = fs.readFileSync(angularAppDirectory + '/index.html', 'utf8'),
             cheerioSelector = cheerio.load(html),
             spObject = '<script>window.levi = ' + JSON.stringify({
@@ -48,5 +48,6 @@ exports = module.exports = function (app) {
         res.send(cheerioSelector.html());
     });
 
-    app.get('/users', routes.api.user.getUsers);
+    app.post('/api/verify', routes.api.user.verify);
+
 };
