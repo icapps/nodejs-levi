@@ -25,15 +25,30 @@ keystone.start({
     },
     onStart: function () {
         var io = keystone.get('io');
+
+        var session = keystone.get('express session');
         var message = require('./routes/api/message');
 
         var alchemy_language = watson.alchemy_language({
             api_key: 'b436fe0c4a13f73bc30fb5e4943b627cf6ac6d8b'
         });
 
+
+        // Share session between express and socketio
+        io.use(function (socket, next) {
+            session(socket.handshake, {}, next);
+        });
+
         // Socketio connection
         io.on('connect', function (socket) {
             console.log('--- User connected');
+
+
+            // Set session variables in route controller
+            // which is going to load the client side socketio
+            // in this case, ./routes/index.js
+            console.log(socket.handshake.session);
+            socket.emit('msg', socket.handshake.session.message);
 
             socket.on('chat', function (data) {
                 socket.join('room/' + data.roomID);
