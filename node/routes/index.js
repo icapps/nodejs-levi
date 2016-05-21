@@ -48,5 +48,8 @@ exports = module.exports = function (app) {
         res.send(cheerioSelector.html());
     });
 
-    app.get('/users', routes.api.user.getUsers);
+    app.get('/api/users', routes.api.user.getUsers);
+
+    // Activity routing.
+    app.post('/api/activities', routes.api.activity.postActivities);
 };
