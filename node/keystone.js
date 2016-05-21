@@ -1,5 +1,8 @@
 require('dotenv').load();
 var keystone = require('keystone');
+var socketio = require('socket.io');
+var watson = require('watson-developer-cloud');
+
 keystone.init({
     'name': 'LEVI',
     'auto update': true,

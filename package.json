@@ -16,7 +16,9 @@
     "mongoose-deep-populate": "^2.0.1",
     "morgan": "^1.6.1",
     "q": "^1.4.1",
-    "request-promise": "^2.0.0"
+    "request-promise": "^2.0.0",
+    "socketio": "^1.0.0",
+    "watson-developer-cloud": "^1.8.0"
   },
   "repository": {},
   "devDependencies": {
