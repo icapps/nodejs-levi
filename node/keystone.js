@@ -55,7 +55,7 @@ keystone.start({
             });
 
             socket.on('message', function (data) {
-                io.to('room/' + data.roomID).emit('response', data.message);
+                //io.to('room/' + data.roomID).emit('response', data.message);
                 // TODO: implement bluemix endpoint
                 var params = {
                     text: data.message
@@ -73,7 +73,7 @@ keystone.start({
                                 console.log(result.error);
                             }
                             else {
-                                io.to('room/' + data.roomID).emit('sentiment', response['docSentiment']);
+                                io.to('room/' + data.roomID).emit('response', {sentiment:response['docSentiment'], message: data.message});
                             }
                         })
                     }
