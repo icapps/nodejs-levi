@@ -6,7 +6,7 @@ var keystone = require('keystone'),
 
 User.add({
     name: {
-        type: Types.Name,
+        type: String,
         required: true,
         index: true,
         initial: true
