@@ -1,7 +1,5 @@
 var keystone = require('keystone'),
     Types = keystone.Field.Types,
-    Sprint = keystone.list('Sprint'),
-    Price = keystone.list('Price'),
     User = new keystone.List('User');
 
 User.add({
