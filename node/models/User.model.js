@@ -19,11 +19,6 @@ User.add({
     password: {
         type: Types.Password,
         initial: true
-    },
-    activities: {
-        type: Types.Relationship,
-        ref: 'Activity',
-        many: true
     }
 }, 'Permissions', {
     isAdmin: {

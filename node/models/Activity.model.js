@@ -23,16 +23,14 @@ Activity.add({
         required: true,
         index: true,
         initial: true
-    }
-}, 'Permissions', {
-    isAdmin: {
-        type: Boolean,
-        label: 'Admin',
-        index: true
+    },
+    user: {
+        type: Types.Relationship,
+        ref: 'User',
+        required: true,
+        index: true,
+        initial: true
     }
 });
-Activity.schema.virtual('canAccessKeystone').get(function() {
-    return this.isAdmin;
-});
-Activity.defaultColumns = 'type, timestamp, value';
+Activity.defaultColumns = 'type, timestamp, value, user';
 Activity.register();
