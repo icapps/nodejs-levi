@@ -50,6 +50,7 @@ exports = module.exports = function (app) {
     app.get('/users', routes.api.user.getUsers);
     app.post('/match', routes.api.match.findMatch);
     app.post('/message', routes.api.message.addMessage);
+    app.post('/messages/analyze', routes.api.message.analyzeTone);
     app.get('/api/users', routes.api.user.getUsers);
 
     // Activity routing.
