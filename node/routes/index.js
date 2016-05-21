@@ -49,4 +49,6 @@ exports = module.exports = function (app) {
         var io = app.io;
         io.listen(server);
     });
+
+    app.get('/users', routes.api.user.getUsers);
 };
