@@ -19,6 +19,9 @@ User.add({
     password: {
         type: Types.Password,
         initial: true
+    },
+    surveyQuestion: {
+        type: String
     }
 }, 'Permissions', {
     isAdmin: {

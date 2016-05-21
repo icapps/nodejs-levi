@@ -54,4 +54,7 @@ exports = module.exports = function (app) {
 
     // Activity routing.
     app.post('/api/activities', routes.api.activity.postActivities);
+
+    // Survey routing.
+    app.post('/api/surveys', routes.api.survey.postSurvey);
 };
