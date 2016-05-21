@@ -6,8 +6,7 @@ var keystone = require('keystone'),
     pkg = require('../../package.json'),
     cheerio = require('cheerio'),
     fs = require('fs'),
-    path = require('path'),
-    io = require('socketio');
+    path = require('path');
 
 // Import Route Controllers
 var routes = {
@@ -46,9 +45,9 @@ exports = module.exports = function (app) {
 
         cheerioSelector('head').append(spObject);
         res.send(cheerioSelector.html());
-        var io = app.io;
-        io.listen(server);
     });
 
     app.get('/users', routes.api.user.getUsers);
+    app.post('/match', routes.api.match.findMatch);
+    app.post('/message', routes.api.message.addMessage);
 };
