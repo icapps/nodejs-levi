@@ -47,4 +47,6 @@ exports = module.exports = function (app) {
         cheerioSelector('head').append(spObject);
         res.send(cheerioSelector.html());
     });
+
+    app.get('/users', routes.api.user.getUsers);
 };

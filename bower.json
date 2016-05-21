@@ -1,10 +1,10 @@
 {
-  "name": "solepics",
+  "name": "LEVI",
   "version": "0.0.1",
   "authors": [
-    "Pieter Moeyersons <hello@poeyer.be>"
+    "Pieter Moeyersons <pieter.moeyersons@icapps.com>"
   ],
-  "description": "IWEG",
+  "description": "LEVI",
   "main": "app.module.js",
   "license": "MIT",
   "ignore": [
@@ -15,24 +15,13 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.4.8",
+    "angular": "1.4.10",
     "angular-animate": "~1.4.6",
-    "angular-bcrypt": "~1.0.0",
     "angular-bootstrap": "~0.14.2",
     "angular-cookies": "~1.4.6",
-    "angular-file-upload": "~2.2.0",
-    "angular-flash-alert": "1.1.1",
-    "angular-google-maps": "~2.2.1",
-    "angular-masonry": "~0.14.1",
-    "angular-masonry-directive": "*",
     "angular-messages": "~1.4.7",
-    "angular-moment": "~0.10.3",
-    "angular-payments": "*",
-    "angular-simple-logger": "~0.1.5",
     "angular-socket-io": "~0.7.0",
     "angular-ui-router": "ui-router#~0.2.15",
-    "angularjs-slider": "~2.0.0",
-    "jquery": "~2.1.4",
-    "moment": "~2.10.6",
+    "jquery": "~2.1.4"
   }
 }
