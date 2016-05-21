@@ -10,7 +10,8 @@
         'app.global',
         'app.api',
         'app.page',
-        'app.user'
+        'app.user',
+        'btford.socket-io'
     ]).config(configureStates);
 
     /** @ngInject */

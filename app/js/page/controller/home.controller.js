@@ -1,30 +1,27 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('app.page').controller('HomeCtrl', HomeCtrl);
 
     /** @ngInject */
-    function HomeCtrl($rootScope, crudService) {
+    function HomeCtrl($rootScope, crudService, socketFactory) {
         var vm = this;
+        var socket = socketFactory();
+        vm.userID = '5740bc83cae3d8030082f706'
+        vm.messages = []
 
-        /*crudService.GET('/presences', {
-            sprint_id: '573a21a8506945d4c6a474c6'
-        }).then(function(sprint) {
-            vm.sprint = sprint;
-        });*/
+        var socket = io('https://levi-app.herokuapp.com/');
+        socket.emit('chat', { roomID: '574076e2e0474103008091c6' });
 
-        $rootScope.$watch('selectedSprint', function(sprint) {
-            if (!sprint) {
-                return;
-            }
+        socket.on('response', function (data) {
+            console.log(data);
+            vm.messages.push(data);
+        });
 
-
-            crudService.GET('/presences', {
-                sprint_id: sprint._id
-            }).then(function(sprint) {
-                vm.sprint = sprint;
-            });
-        })
-
+        vm.send = function () {
+            socket.emit('message', { userID: vm.userID, message: vm.message })
+            vm.messages.push({ userID: vm.userID, message: vm.message });
+            vm.message = '';
+        }
     }
 })();

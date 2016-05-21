@@ -73,7 +73,7 @@ keystone.start({
                                 console.log(result.error);
                             }
                             else {
-                                io.to('room/' + data.roomID).emit('response', {sentiment:response['docSentiment'], message: data.message});
+                                io.to('room/' + data.roomID).emit('response', {userID: data.userID, score:response['docSentiment']['score'], type:response['docSentiment']['type'], message: data.message});
                             }
                         })
                     }

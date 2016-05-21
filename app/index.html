@@ -25,6 +25,8 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
 
     <!-- Angular -->
     <script src="js/app.module.js"></script>
@@ -45,9 +47,9 @@
     <!-- endbuild -->
 </head>
 
-<body ng-app="app" ng-controller="PageCtrl as page">
+<body ng-app="app">
 <status-bar></status-bar>
-
+<div ui-view></div>
 <footer>
 </footer>
 </body>
