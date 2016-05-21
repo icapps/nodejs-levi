@@ -199,7 +199,7 @@ module.exports = function (grunt) {
         cssmin: {
             build: {
                 files: {
-                    '<%= appConfig.buildFolder %>/app/css/solepics.css': [
+                    '<%= appConfig.buildFolder %>/app/css/levi.css': [
                         'app/css/{,*/}*.css'
                     ]
                 }
@@ -309,7 +309,7 @@ module.exports = function (grunt) {
                         collapseWhitespace: false,
                         removeComments: true
                     },
-                    usemin: '/js/solepics.min.js',
+                    usemin: '/js/levi.min.js',
                     url: function(url) {
                         return url.slice(1);
                     }
