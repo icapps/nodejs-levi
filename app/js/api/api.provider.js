@@ -19,7 +19,7 @@
 
                 var setup = {
                     method: method,
-                    url: window.sp.baseUrl + serialized,
+                    url: window.levi.baseUrl + serialized,
                     data: data,
                     headers: {
                         'Content-Type': 'application/json'

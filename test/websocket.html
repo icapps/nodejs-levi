@@ -4,11 +4,11 @@
     <title>WebSocket Echo Test</title>
     <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
     <script>
-        var socket = io('http://localhost:3000/');
-            socket.emit('chat', { roomID: '57405f410c0ffd89b909a852' });
-            socket.emit('message', { roomID: '57405f410c0ffd89b909a852', message: 'loveeee', userID: '57404c09c8e2b5eda834d04b' });
-            socket.emit('message', { roomID: '57405f410c0ffd89b909a852', message: 'dirty cocksucker', userID: '57404c09c8e2b5eda834d04b' });
-            socket.emit('message', { roomID: '57405f410c0ffd89b909a852', message: 'i love life', userID: '57404c09c8e2b5eda834d04b' });
+        var socket = io('https://levi-app.herokuapp.com/');
+            socket.emit('chat', { roomID: '574076e2e0474103008091c6' });
+            socket.emit('message', { roomID: '574076e2e0474103008091c6', message: 'loveeee', userID: '57404c09c8e2b5eda834d04b' });
+            socket.emit('message', { roomID: '574076e2e0474103008091c6', message: 'dirty cocksucker', userID: '57404c09c8e2b5eda834d04b' });
+            socket.emit('message', { roomID: '574076e2e0474103008091c6', message: 'i love life', userID: '57404c09c8e2b5eda834d04b' });
 
             socket.on('response', function (data) {
                 console.log(data);
